@@ -1,5 +1,5 @@
 {% set name = "wxdata" %}
-{% set version = "1.2.6" %}
+{% set version = "1.2.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/wxdata-{{ version }}.tar.gz
-  sha256: 761b9ded9137d85330da68a4634cc0884410898463d76df4c63ebb95422889c6
+  sha256: 1fb5f771b9f91b3771ea45b6356bc5d2fcd03311d4f7b3289fc9a23d9865d761
 
 build:
   noarch: python
