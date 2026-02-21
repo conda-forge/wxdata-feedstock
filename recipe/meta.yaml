@@ -1,5 +1,5 @@
 {% set name = "wxdata" %}
-{% set version = "1.2.7" %}
+{% set version = "1.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/wxdata-{{ version }}.tar.gz
-  sha256: 1fb5f771b9f91b3771ea45b6356bc5d2fcd03311d4f7b3289fc9a23d9865d761
+  sha256: 782173c7e661d4e51081c4cdee603bbd41621c1052b51261a0259fe19b267cbf
 
 build:
   noarch: python
@@ -27,7 +27,7 @@ requirements:
     - pandas >=2.2
     - xarray >=2023.1.0
     - netcdf4 >=1.7.1
-    - cartopy >=0.21.0
+    - shapeography >=1.0
     - beautifulsoup4 >=4.13.4
     - requests >=2.32.4
     - cfgrib >=0.9.10.4
