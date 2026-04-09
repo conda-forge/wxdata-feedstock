@@ -1,5 +1,5 @@
 {% set name = "wxdata" %}
-{% set version = "1.4.2" %}
+{% set version = "1.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/wxdata-{{ version }}.tar.gz
-  sha256: 0bff541f53c24e01d39c34c54d11bc9722e53955402d74376ff6af95b384522e
+  sha256: 7efaca455f6f1cd2362127d91ba910ee19507a46584db16b6e4dfec5fb8363b1
 
 build:
   noarch: python
@@ -34,6 +34,7 @@ requirements:
     - dask-core >=2025.5.1
     - tqdm >=4.67.3
     - ecmwf-opendata >=0.3.26
+    - openpyxl >=3.1.5
 
 test:
   imports:
