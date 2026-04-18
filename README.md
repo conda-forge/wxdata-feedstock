@@ -7,11 +7,47 @@ Home: https://github.com/edrewitz/WxData
 
 Package license: MIT
 
-Summary: An open source library for downloading and pre/post-processing various types of weather data. Friendly for VPN/PROXY connections.
+Summary: A Python package of end-to-end weather data clients & raw data clients with VPN/PROXY support, data processors that decode variable keys from GRIB format into a plain-language format & various tools for assisting Python automated workflows, querying meteorological datasets and filling gaps in meteorological data.
 
 Development: https://github.com/edrewitz/WxData
 
 Documentation: https://pypi.org/project/wxdata/
+
+
+Project Description
+-------------------
+WxData is a Python package geared to help atmospheric scientists set up automated workflows that download,
+pre-process and post-process various types of weather data (observational and forecast).
+
+Data Clients
+------------
+There are two classes of clients: End-To-End and Raw. End-To-End clients download, pre-process and post process data
+specific to a type of dataset (i.e. gfs0p25() for GFS (0.25x0.25) Data). Raw clients assist users in downloading different
+types of data (i.e. get_gridded_data(), get_csv_data(), get_excel_data(), get_aws_open_data() and get_xmacis_data()).
+These clients have built-in support for users working on VPN/PROXY connections. Users will need to define their own
+PROXY settings and pass those settings into the client so the client knows the path from the HOST to the Data Server.
+
+Post-Processors
+---------------
+WxData has post-processing modules for every type of dataset that has an end-to-end client. Users may also import these
+post-processing modules if they wish to use their own downloading procedures.
+
+Data Querying Tools
+-------------------
+WxData has tools to assist users with pixel and line querying for gridded datasets.
+
+Data Transformation & Gap Filling Tools
+---------------------------------------
+WxData has tools to assist users with:
+
+1) Shifting longitude in gridded datasets from a 0 to 360 into a -180 to 180 projection.
+2) Adding cyclic points to resolve data gaps along the 180 or 0 degree meridian in gridded datasets.
+3) Linearly interpolating between two data points.
+
+Automated Python Workflow Tools
+-------------------------------
+WxData has a tool users can use to execute a series of Python scripts in the order the user lists them in.
+
 
 Current build status
 ====================
