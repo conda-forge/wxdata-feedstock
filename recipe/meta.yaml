@@ -1,5 +1,5 @@
 {% set name = "wxdata" %}
-{% set version = "2.2" %}
+{% set version = "2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/wxdata-{{ version }}.tar.gz
-  sha256: b199edd5087c987d448e4de1ab221f3390926dd4298dcaf2bd0d7b63bf77c8ba
+  sha256: 39f6ddff060aca9ec470086be7e2e5032038051b1bd67e1461aa710f490d16e5
 
 build:
   noarch: python
@@ -49,7 +49,7 @@ test:
 
 about:
   home: https://github.com/edrewitz/WxData
-  summary: A Python package of end-to-end weather data clients & raw data clients with VPN/PROXY support, data processors that decode variable keys from GRIB format into a plain-language format & various tools for assisting Python automated workflows, querying meteorological datasets and filling gaps in meteorological data.
+  summary: A Python package of end-to-end weather data clients & raw data clients with VPN/Proxy Server support, data processors that decode variable keys from GRIB format into a plain-language format & various tools for assisting Python automated workflows, querying meteorological datasets and filling gaps in meteorological data.
   license: MIT
   license_file: LICENSE
   doc_url: https://pypi.org/project/wxdata/
