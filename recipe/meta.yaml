@@ -1,5 +1,5 @@
 {% set name = "wxdata" %}
-{% set version = "2.3" %}
+{% set version = "3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,9 +7,27 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/wxdata-{{ version }}.tar.gz
-  sha256: 39f6ddff060aca9ec470086be7e2e5032038051b1bd67e1461aa710f490d16e5
+  sha256: 58d1e56675048c1718050c3da96da2ead673493364eab47d839cace0a9101c2c
 
 build:
+  entry_points:
+    - wxdata-rtma = wxdata.rtma_cli:main
+    - wxdata-cfs = wxdata.cfs_cli:main
+    - wxdata-gfs = wxdata.gfs_cli:main
+    - wxdata-gefs = wxdata.gefs_cli:main
+    - wxdata-aigefs = wxdata.aigefs_cli:main
+    - wxdata-aigfs = wxdata.aigfs_cli:main
+    - wxdata-hgefs = wxdata.hgefs_cli:main
+    - wxdata-ecmwf = wxdata.ecmwf_cli:main
+    - wxdata-cansips = wxdata.cansips_cli:main
+    - wxdata-gdps = wxdata.gdps_cli:main
+    - wxdata-rdps = wxdata.rdps_cli:main
+    - wxdata-hrdps = wxdata.hrdps_cli:main
+    - wxdata-geps = wxdata.geps_cli:main
+    - wxdata-ndfd = wxdata.ndfd_cli:main
+    - wxdata-soundings = wxdata.soundings_cli:main
+    - wxdata-metars = wxdata.metars_cli:main
+    - wxdata-nexrad2 = wxdata.nexrad2_cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
@@ -34,15 +52,32 @@ requirements:
     - cfgrib >=0.9.15.1
     - dask-core >=2025.11.0
     - tqdm >=4.67.3
-    - ecmwf-opendata >=0.3.26
     - openpyxl >=3.1.5
     - arm_pyart >=2.2.0
+    - click >=8.3.1
 
 test:
   imports:
     - wxdata
   commands:
     - pip check
+    - wxdata-rtma --help
+    - wxdata-cfs --help
+    - wxdata-gfs --help
+    - wxdata-gefs --help
+    - wxdata-aigefs --help
+    - wxdata-aigfs --help
+    - wxdata-hgefs --help
+    - wxdata-ecmwf --help
+    - wxdata-cansips --help
+    - wxdata-gdps --help
+    - wxdata-rdps --help
+    - wxdata-hrdps --help
+    - wxdata-geps --help
+    - wxdata-ndfd --help
+    - wxdata-soundings --help
+    - wxdata-metars --help
+    - wxdata-nexrad2 --help
   requires:
     - pip
     - python {{ python_min }}
@@ -52,7 +87,7 @@ about:
   summary: A Python package of end-to-end weather data clients & raw data clients with VPN/Proxy Server support, data processors that decode variable keys from GRIB format into a plain-language format & various tools for assisting Python automated workflows, querying meteorological datasets and filling gaps in meteorological data.
   license: MIT
   license_file: LICENSE
-  doc_url: https://pypi.org/project/wxdata/
+  doc_url: https://edrewitz.github.io/WxData/
   dev_url: https://github.com/edrewitz/WxData
   description: |
 
