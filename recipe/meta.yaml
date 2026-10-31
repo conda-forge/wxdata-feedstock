@@ -53,7 +53,7 @@ requirements:
     - dask-core >=2025.11.0
     - tqdm >=4.67.3
     - openpyxl >=3.1.5
-    - arm-pyart >=2.2.0
+    - arm_pyart >=2.2.0
     - click >=8.3.1
 
 test:
