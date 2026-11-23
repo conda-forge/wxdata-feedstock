@@ -1,13 +1,13 @@
 {% set name = "wxdata" %}
-{% set version = "3.1" %}
+{% set version = "3.1.1" %}
 
 package:
   name: wxdata
-  version: "{{ version }}"
+  version: {{ version }}
 
 source:
   url: https://files.pythonhosted.org/packages/source/w/wxdata/wxdata-{{ version }}.tar.gz
-  sha256: 5f4e8051433a56527c2cf1f73add36030d303f861cf60d0099a7dab6a89dec35
+  sha256: 75bf831b2666fbb839a66ed419dae8d6dc2837970557b2c3856d2944a84dbfdc
 
 build:
   entry_points:
