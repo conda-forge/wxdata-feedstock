@@ -1,13 +1,13 @@
 {% set name = "wxdata" %}
-{% set version = "3.0" %}
+{% set version = "3.1" %}
 
 package:
-  name: {{ name|lower }}
+  name: wxdata
   version: "{{ version }}"
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/wxdata-{{ version }}.tar.gz
-  sha256: 58d1e56675048c1718050c3da96da2ead673493364eab47d839cace0a9101c2c
+  url: https://files.pythonhosted.org/packages/source/w/wxdata/wxdata-{{ version }}.tar.gz
+  sha256: 5f4e8051433a56527c2cf1f73add36030d303f861cf60d0099a7dab6a89dec35
 
 build:
   entry_points:
@@ -24,13 +24,14 @@ build:
     - wxdata-rdps = wxdata.rdps_cli:main
     - wxdata-hrdps = wxdata.hrdps_cli:main
     - wxdata-geps = wxdata.geps_cli:main
+    - wxdata-woof-nam = wxdata.woof_nam_cli:main
     - wxdata-ndfd = wxdata.ndfd_cli:main
     - wxdata-soundings = wxdata.soundings_cli:main
     - wxdata-metars = wxdata.metars_cli:main
     - wxdata-nexrad2 = wxdata.nexrad2_cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -74,6 +75,7 @@ test:
     - wxdata-rdps --help
     - wxdata-hrdps --help
     - wxdata-geps --help
+    - wxdata-woof-nam --help
     - wxdata-ndfd --help
     - wxdata-soundings --help
     - wxdata-metars --help
