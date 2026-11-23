@@ -3,7 +3,7 @@
 
 package:
   name: wxdata
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://files.pythonhosted.org/packages/source/w/wxdata/wxdata-{{ version }}.tar.gz
